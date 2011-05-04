@@ -13,10 +13,19 @@ Gem::Specification.new do |s|
   s.description = %q{Simple, yet, flexible redis-backed site/application settings manager.  Works with Rails, Sinatra, or just plain old Ruby.}
   s.email = %q{patricktulskie@gmail.com}
   s.extra_rdoc_files = [
-    "README.rdoc"
+    "README.mdown"
   ]
   s.files = [
-    "burger_fixins.gemspec"
+    ".document",
+    "README.mdown",
+    "Rakefile",
+    "VERSION",
+    "autotest/discover.rb",
+    "burger_fixins.gemspec",
+    "lib/burger_fixins.rb",
+    "lib/burger_fixins/burger_fixins.rb",
+    "spec/burger_fixins_spec.rb",
+    "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/PatrickTulskie/burger_fixins}
   s.require_paths = ["lib"]
