@@ -1,0 +1,41 @@
+# burger_fixins
+
+Simple, yet, flexible redis-backed site/application settings manager.  Works with Rails, Sinatra, or just plain old Ruby.
+
+There's so many different options for burger fixins.
+
+## Sample Use
+	
+	require 'burger_fixins'
+	
+	class SiteSettings
+		include BurgerFixins
+
+		setting :bacon,					:boolean
+		setting :lettuce_types,	:array
+		setting :burger_limit,	:integer
+	end
+
+	SiteSettings.bacon = true
+	SiteSettings.bacon #=> true
+	SiteSettings.lettuce_types = ['iceberg', 'romaine']
+	SiteSettings.lettuce_types #=> ["iceberg", "romaine"]
+	
+## Notes
+
+* redis/objects is used so you can store complex data types.
+* redis/namespace is used so that you can create multiple settings classes (APISettings, SiteSettings, GuestSettings).
+
+## Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+## Copyright
+
+Copyright (c) 2011 Patrick Tulskie. See LICENSE for details.

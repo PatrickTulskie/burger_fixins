@@ -1,0 +1,5 @@
+require 'redis'
+require 'redis/namespace'
+require 'redis/objects'
+require 'redis/value'
+require 'burger_fixins/burger_fixins'
