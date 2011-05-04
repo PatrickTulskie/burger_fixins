@@ -11,7 +11,7 @@ There's so many different options for burger fixins.
 	class SiteSettings
 		include BurgerFixins
 
-		setting :bacon,					:boolean
+		setting :bacon,			:boolean
 		setting :lettuce_types,	:array
 		setting :burger_limit,	:integer
 	end
