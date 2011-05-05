@@ -29,6 +29,13 @@ describe 'burger_fixins' do
     Redis.new(:db => 15)['TestSettings:bacon'].should == "true"
   end
   
+  it "should be able to false boolean values" do
+    TestSettings.bacon = true
+    TestSettings.bacon.should be_true
+    TestSettings.bacon = false
+    TestSettings.bacon.should be_false
+  end
+  
   it "should retrieve a setting" do
     TestSettings.bacon = true
     TestSettings.bacon.should be_true
