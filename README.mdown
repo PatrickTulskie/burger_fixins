@@ -10,7 +10,8 @@ There's so many different options for burger fixins.
 	
 	class SiteSettings
 		include BurgerFixins
-
+		
+		redis_instance Redis.new(:db => 15)
 		setting :bacon,			:boolean
 		setting :lettuce_types,	:array
 		setting :burger_limit,	:integer
