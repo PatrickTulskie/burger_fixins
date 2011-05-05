@@ -7,10 +7,14 @@ module BurgerFixins
   end
   
   module ClassMethods
-    def redis_instance
-      $fixins_storage ||= Redis.current
+    def redis_instance(r = nil)
+      if r
+        @@redis_instance = r
+      else
+        defined?(@@redis_instance) ? @@redis_instance : Redis.current
+      end
     end
-
+    
     def settings_store
       Redis::Namespace.new(self.to_s, :redis => redis_instance)
     end

@@ -8,22 +8,20 @@ describe 'burger_fixins' do
     class TestSettings
       include BurgerFixins
       
+      redis_instance Redis.new(:db => 15)
       setting :bacon, :boolean
       setting :lettuce_types, :array
       setting :burger_limit, :integer
       
-      def self.redis_instance
-        Redis.new(:db => 15)
-      end
     end
   end
 
   before(:each) do
-    TestSettings.redis_instance.flushdb
+    Redis.new(:db => 15).flushdb
   end
 
   after(:each) do
-    TestSettings.redis_instance.flushdb
+    Redis.new(:db => 15).flushdb
   end
   
   it "should save a setting" do
