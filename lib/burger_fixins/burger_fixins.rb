@@ -72,7 +72,7 @@ module BurgerFixins
       module_eval <<-STR
         def self.#{setting_name}; Redis::Value.new('#{setting_name}', settings_store).value == "true" ; end
         def self.#{setting_name}=(v); settings_store['#{setting_name.to_s}'] = v.to_s ; end
-        def self.#{setting_name}?; !!settings_store['#{setting_name.to_s}'] ; end
+        def self.#{setting_name}?; Redis::Value.new('#{setting_name}', settings_store).value == "true" ; end
       STR
     end
     

@@ -36,6 +36,13 @@ describe 'burger_fixins' do
     TestSettings.bacon.should be_false
   end
   
+  it "should be able to answer boolean questions" do
+    TestSettings.bacon = true
+    TestSettings.bacon?.should be_true
+    TestSettings.bacon = false
+    TestSettings.bacon?.should be_false
+  end
+  
   it "should retrieve a setting" do
     TestSettings.bacon = true
     TestSettings.bacon.should be_true
